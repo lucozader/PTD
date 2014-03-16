@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour {
 		//Debug.Log(timer);
 		if(once == false && timer >10){
 			Debug.Log("now");
-	transform.position = new Vector3(-440, 30, 1483);
+	transform.position = new Vector3(-440, 50, 1483);
 	GameObject pro1  = Instantiate (spawn1,transform.position,Quaternion.identity) as GameObject;///specific one
 	//transform.position = new Vector3(-24, 8, -8);
 	//GameObject pro2  = Instantiate (spawn2,transform.position,Quaternion.identity) as GameObject;///specific one
