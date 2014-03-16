@@ -8,7 +8,9 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	public AudioClip multiSound;
 	public static int planetHealthLeft = 100;
 	public GameObject ball;///template		
-	public static float range = 100;
+	//public static float range = 100;
+	public static float ranger = 1;
+
 	public static float funds = 500;
 	public static float attack = 100;
 	public static int upgrades = 5;
@@ -37,8 +39,19 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	void Update(){
 		
 		if(planetHealthLeft <= 0)
-		{	
-			Application.LoadLevel("Title");//maby add death later on
+		{	planetHealthLeft = 100;
+			funds = 1000;
+			DeadCount.numberDead=0;
+			EnemyController.timer = 0;
+			Application.LoadLevel("endscene");//maby add death later on
+		}
+		if(DeadCount.numberDead == 12)
+		{	planetHealthLeft = 100;
+			funds = 1000;
+			DeadCount.numberDead=0;
+			EnemyController.timer = 0;
+			
+			Application.LoadLevel("winscene");//maby add death later on
 		}
 	}
 	
@@ -53,12 +66,17 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 			start = false;
 			textbox = "Bye, Thanks for playing!";
 			
-			audio.PlayOneShot(exitSound);
-			Application.LoadLevel("Title");
+			//audio.PlayOneShot(exitSound);
+			planetHealthLeft = 100;
+			funds = 1000;
+			DeadCount.numberDead=0;
+			EnemyController.timer = 0;
+			
+			Application.LoadLevel("startscene");
 		}
 		
-		GUI.Box(new Rect(x,y,w,h), "Range %");
-		GUI.Box(new Rect(x,y+20,w,h-20), range.ToString());
+		//GUI.Box(new Rect(x,y,w,h), "Range %");
+	//	GUI.Box(new Rect(x,y+20,w,h-20), range.ToString());
 
 		
 		//if(GUI.Button(new Rect(x+10,y+20,80,20),"Multi")&& range > 0){
@@ -86,15 +104,15 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	
 
 			
-	GUI.Box(new Rect(x+110,y,w,h), "Attack %");
-	GUI.Box(new Rect(x+110,y+20,w,h-20), attack.ToString());
+	//GUI.Box(new Rect(x+110,y,w,h), "Attack %");
+//	GUI.Box(new Rect(x+110,y+20,w,h-20), attack.ToString());
 		
-	GUI.Box(new Rect(x+220,y,w,h), "Planet Health");
-	GUI.Box(new Rect(x+220,y+20,w,h-20), planetHealthLeft.ToString());
+		GUI.Box(new Rect(Screen.width-300,y,w,h), "Village Health");
+	GUI.Box(new Rect(Screen.width-300,y+20,w,h-20), planetHealthLeft.ToString());
 		
-		GUI.Box(new Rect(x+330,y,w,h), "Defence Funds");
+		GUI.Box(new Rect(Screen.width/2,y,w,h), "Defence Funds");
 			funds = EnergyManager.energy;
-	GUI.Box(new Rect(x+330,y+20,w,h-20), funds.ToString());
+		GUI.Box(new Rect(Screen.width/2,y+20,w,h-20), funds.ToString());
 			
 		
 		
@@ -123,7 +141,7 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 
 		//
 		//GUI.Box(new Rect(Screen.width-110,Screen.height - 540,w,h), "Upgrade Health");
-		if(GUI.Button(new Rect(Screen.width-100,Screen.height -520,80,20),"Health +"))
+		/**	if(GUI.Button(new Rect(Screen.width-100,Screen.height -520,80,20),"Health +"))
 		{
 			if(upgrades > 0 && planetHealthLeft < 181){
 			textbox = "Health Upgraded!";
@@ -132,7 +150,7 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 			//audio.PlayOneShot(exitSound);
 	
 		}
-				GUI.Box(new Rect(Screen.width-110,Screen.height - 490,w,h), "Upgrade Range");
+			GUI.Box(new Rect(Screen.width-110,Screen.height - 490,w,h), "Upgrade Range");
 		if(GUI.Button(new Rect(Screen.width-100,Screen.height -470,80,20),"Range +"))
 		{
 						if(upgrades > 0 && range < 181){
@@ -143,7 +161,7 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 			BasicTower.increase = BasicTower.increase+20; }
 			//audio.PlayOneShot(exitSound);
 	
-		}
+		} 
 				GUI.Box(new Rect(Screen.width-110,Screen.height - 440,w,h), "Upgrade Attack");
 		if(GUI.Button(new Rect(Screen.width-100,Screen.height -420,80,20),"Attack +"))
 		{			if(upgrades > 0&& attack < 200){
@@ -156,7 +174,7 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 
 	
 		}
-
+**/
 
 		}
 }

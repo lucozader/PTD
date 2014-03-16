@@ -7,6 +7,6 @@ public class EnergyBonusOnDestroy : MonoBehaviour
 
 	void OnDestroy()
 	{
-		EnergyManager.energy += energyBonus;
+	//	EnergyManager.energy += energyBonus;
 	}
 }

@@ -30,7 +30,7 @@ public class PathThroughObjects : MonoBehaviour
 			currentPathIndex++;
 			if(currentPathIndex >= pathPoints.Length)
 			{
-				GUIControllerFireEmblem.planetHealthLeft = GUIControllerFireEmblem.planetHealthLeft-5;//ADD LOGIC HERE TO DEDUCT HEALTH FROM PLAYER/BASE
+				//GUIControllerFireEmblem.planetHealthLeft = GUIControllerFireEmblem.planetHealthLeft-10;//ADD LOGIC HERE TO DEDUCT HEALTH FROM PLAYER/BASE
 				Destroy(gameObject);
 			}
 			else

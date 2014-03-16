@@ -3,20 +3,36 @@ using System.Collections;
 
 public class MouseOverChest : MonoBehaviour {
 
+	bool once = false;
 	 float timer = 0;
 
 	void Update(){
+	
 		timer = timer+1*Time.deltaTime;
-		if(timer > 3){Destroy (gameObject);}
+			if(timer > 3){Destroy (gameObject);}
+
+
+
+			
+			
+
+			
+
 	}
 
 		void OnMouseEnter()
 		{
 			//move treasure chest to money and increase money by 100
-			
+			if(once == false){
 			EnergyManager.energy += 100;
 			Debug.Log("MOUSE ENTERED");
-		Destroy(gameObject);
+
+			PlaySoundsAfterDestroy.MoneySoundOnce = true;
+			once = true;
+			TextFixRotation.death = true;
+			Destroy (gameObject);}
+			
 		}
+
 	}
 

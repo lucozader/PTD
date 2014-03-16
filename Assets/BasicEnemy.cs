@@ -2,8 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class BasicEnemy : MonoBehaviour {
+	//public Texture2D test1;
+//	public Texture2D test2;
 	public GameObject explosion;
-
+	bool once = false;
 	public float health = 10;
 	public static float increase1 = 0;
 	public GameObject chest;
@@ -15,6 +17,7 @@ public class BasicEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+	
 	
 	}
 	
@@ -31,6 +34,13 @@ public class BasicEnemy : MonoBehaviour {
 			health = health-1;
 			Destroy(collision.collider.gameObject);
 		}
+		if(collision.collider.tag == "Slow")
+		{
+			//health= health - (health+ increase1*(health/100));
+			health = health-1;
+			//renderer.material.mainTexture = test2;
+			Destroy(collision.collider.gameObject);
+		}
 		if(collision.collider.tag == "Bullet")
 		{
 			//health= health - (health+ increase1*(health/100));
@@ -43,16 +53,16 @@ public class BasicEnemy : MonoBehaviour {
 			//Destroy(collision.collider.gameObject);
 		}
 	
-		if(health <= 0)
-		{
+		if(health <= 0&& once == false)
+		{DeadCount.numberDead+= 1;
 			Destroy(collision.collider.gameObject);
-		
-			
+			once = true;
 		
 
 				//EnergyManager.energy += energyBonus;
 				//	Quaternion pathObjectOrientation = Quaternion.LookRotation(pathPoints[0].transform.position - transform.position);
-				GameObject test = Instantiate(chest, transform.position, Quaternion.identity) as GameObject;
+			Vector3 chestPosition  = new Vector3(transform.position.x,transform.position.y+30,transform.position.z);
+				GameObject test = Instantiate(chest, chestPosition, Quaternion.identity) as GameObject;
 
 			Destroy(gameObject);
 		}

@@ -58,10 +58,13 @@ public class EnemySpawner : MonoBehaviour
 			pathObjectOrientation = Quaternion.LookRotation(pathPoints[i].transform.position - pathPoints[i-1].transform.position);
 			pathObject = Instantiate(graphicalPathObject, pathObjectPosition, pathObjectOrientation) as GameObject;
 			newScale = Vector3.one;
+			//newScale += new Vector3(100f, 100f, 100f);//added
 			newScale.z = (pathPoints[i].transform.position - pathPoints[i-1].transform.position).magnitude;
 			pathObject.transform.localScale = newScale;
 			
 			newTextureScale = Vector2.one;
+			//newTextureScale += new Vector2(0.1f, 0.1f);//added
+
 			newTextureScale.y = (pathPoints[i].transform.position - pathPoints[i-1].transform.position).magnitude;
 			pathObject.renderer.material.mainTextureScale = newTextureScale;
 		}
@@ -71,10 +74,13 @@ public class EnemySpawner : MonoBehaviour
 	void OnDrawGizmos()
 	{
 		Gizmos.DrawLine(transform.position, pathPoints[0].transform.position);
+		Debug.DrawLine(transform.position, pathPoints[0].transform.position);
 		
 		for(int i = 1; i < pathPoints.Length; i++)
 		{
 			Gizmos.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+			Debug.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+
 		}
 	}
 }

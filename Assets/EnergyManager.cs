@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnergyManager : MonoBehaviour
 {
-	public int initialEnergy = 500;
+	public int initialEnergy = 1000;
 	public GameObject energyDisplay;
 	
 	public static float energy;

@@ -11,6 +11,6 @@ public class HarrisMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(EnemyController.timer > 10){
-	gameObject.transform.Translate(20f,0,0);}
+	gameObject.transform.Translate(1f,0,0);}
 	}
 }
