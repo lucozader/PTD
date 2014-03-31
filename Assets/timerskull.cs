@@ -14,7 +14,8 @@ public class timerskull : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer  = timer + 1*Time.deltaTime;
-		if(timer > 5){
-			Application.LoadLevel("startscene");}
+		if(timer > 5&&GUIControllerFireEmblem.highScorePDF>HighScoreTemp.permanentHighScore){
+			//Application.LoadLevel("startscene");}
+			Application.LoadLevel ("HighScoreEntryScreen");}
 	}
 }

@@ -10,7 +10,7 @@ public class Starter : MonoBehaviour {
 			timer = timer+1*Time.deltaTime;}
 
 		if(timer>0.8f){
-			Application.LoadLevel("scene1");}
+			Application.LoadLevel("OpeningCutscene");}
 		
 		
 

@@ -10,6 +10,7 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	public GameObject ball;///template		
 	//public static float range = 100;
 	public static float ranger = 1;
+	public static int highScorePDF;
 
 	public static float funds = 500;
 	public static float attack = 100;
@@ -32,11 +33,13 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	{
 		//textbox = "Hello, Defend the Earth from Dastardly General Harris's forces!";
 				//	audio.PlayOneShot(openingSound);
+		highScorePDF = 0;
 
 	}
 	
 	
 	void Update(){
+		Debug.Log(highScorePDF);
 		
 		if(planetHealthLeft <= 0)
 		{	planetHealthLeft = 100;
@@ -45,14 +48,17 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 			EnemyController.timer = 0;
 			Application.LoadLevel("endscene");//maby add death later on
 		}
-		if(DeadCount.numberDead == 12)
-		{	planetHealthLeft = 100;
+
+		if(DeadCount.numberDead == 12 && EnemyController.waveActivate == 10 )
+		{	GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF+(planetHealthLeft*1000)/10;
+			planetHealthLeft = 100;
 			funds = 1000;
 			DeadCount.numberDead=0;
 			EnemyController.timer = 0;
-			
 			Application.LoadLevel("winscene");//maby add death later on
-		}
+		
+		} 
+
 	}
 	
 	
@@ -113,6 +119,9 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 		GUI.Box(new Rect(Screen.width/2,y,w,h), "Defence Funds");
 			funds = EnergyManager.energy;
 		GUI.Box(new Rect(Screen.width/2,y+20,w,h-20), funds.ToString());
+
+		GUI.Box(new Rect(300,y,w,h), "Score");
+		GUI.Box(new Rect(300,y+20,w,h-20), highScorePDF.ToString());//display high score in game
 			
 		
 		

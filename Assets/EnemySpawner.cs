@@ -5,7 +5,10 @@ public class EnemySpawner : MonoBehaviour
 {
 	public GameObject[] pathPoints;
 	public GameObject[] spawnList;
+	public GameObject pathitem;
 	public float spawnTime;
+	bool once = false;
+	float distance;
 	
 	public GameObject graphicalPathObject;
 	
@@ -16,12 +19,27 @@ public class EnemySpawner : MonoBehaviour
 	void Start ()
 	{
 		InvokeRepeating("Spawn", 0, spawnTime);
-		CreateGraphicalPathObjects();
+		//CreateGraphicalPathObjects();
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update (){
+
+		for(int i = 1; i < pathPoints.Length; i++)
 	{
+		//Gizmos.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+		//Debug.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+		for(float j = 0; j < 1; j= j + 0.3f){
+			Vector3  test = new Vector3();
+			test = Vector3.Lerp(pathPoints[i-1].transform.position, pathPoints[i].transform.position,j);
+			GameObject pathitem1 = Instantiate(pathitem, test, Quaternion.identity) as GameObject;
+			
+		}
+		
+		
+		
+	}
+
 	}
 	
 	void Spawn()
@@ -38,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
 		reference.SendMessage("SetPathPoints", pathPoints);
 	}
 	
-	void CreateGraphicalPathObjects()
+/* void CreateGraphicalPathObjects()
 	{
 		//Create object between transform.position and first waypoint
 		Vector3 pathObjectPosition = ((pathPoints[0].transform.position - transform.position)*0.5f) + transform.position;
@@ -69,17 +87,37 @@ public class EnemySpawner : MonoBehaviour
 			pathObject.renderer.material.mainTextureScale = newTextureScale;
 		}
 		
-	}
+	} */
 	
 	void OnDrawGizmos()
 	{
-		Gizmos.DrawLine(transform.position, pathPoints[0].transform.position);
-		Debug.DrawLine(transform.position, pathPoints[0].transform.position);
-		
+		//Gizmos.DrawLine(transform.position, pathPoints[0].transform.position);
+		//Debug.DrawLine(transform.position, pathPoints[0].transform.position);
+		if(once == false){
+
 		for(int i = 1; i < pathPoints.Length; i++)
 		{
-			Gizmos.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
-			Debug.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+			//Gizmos.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+			Vector3  test = new Vector3();
+
+
+
+		//	Debug.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+				 distance = Vector3.Distance (pathPoints[i-1].transform.position, pathPoints[i].transform.position);
+				distance = distance/200;
+			for(float j = 0; j < 1; j= j + 1/distance){
+				test = Vector3.Lerp(pathPoints[i-1].transform.position, pathPoints[i].transform.position,j);
+				GameObject pathitem1 = Instantiate(pathitem, test, Quaternion.identity) as GameObject;
+				}
+				once = true;
+			}
+			//for(float j = 0; j < 1; j= j + 0.2f){
+			//	test = Vector3.Lerp(transform.position, pathPoints[0].transform.position,j);
+			//	GameObject pathitem1 = Instantiate(pathitem, test, Quaternion.identity) as GameObject;
+				
+		//	}
+
+
 
 		}
 	}

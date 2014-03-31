@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\AnimateDragon.cs" />
      <Compile Include="Assets\AsteroidTitle.cs" />
+     <Compile Include="Assets\Backspace.cs" />
      <Compile Include="Assets\BasicEnemy.cs" />
      <Compile Include="Assets\BasicTower.cs" />
      <Compile Include="Assets\BulletRangeDestroy.cs" />
@@ -67,13 +68,19 @@
      <Compile Include="Assets\EnemySpawner.cs" />
      <Compile Include="Assets\EnergyBonusOnDestroy.cs" />
      <Compile Include="Assets\EnergyManager.cs" />
+     <Compile Include="Assets\EnterName.cs" />
      <Compile Include="Assets\Explosion.cs" />
      <Compile Include="Assets\ExplosionWater.cs" />
+     <Compile Include="Assets\FlashingSkipCutsceneText.cs" />
      <Compile Include="Assets\GUIControllerFireEmblem.cs" />
      <Compile Include="Assets\HarrisMove.cs" />
      <Compile Include="Assets\HighScore.cs" />
+     <Compile Include="Assets\HighScoreNameDisplay.cs" />
+     <Compile Include="Assets\HighScoreNumber.cs" />
+     <Compile Include="Assets\HighScoreTemp.cs" />
      <Compile Include="Assets\HighScoreText.cs" />
      <Compile Include="Assets\LaunchRocket.cs" />
+     <Compile Include="Assets\LetterScript.cs" />
      <Compile Include="Assets\Level1Text.cs" />
      <Compile Include="Assets\MoonRotate.cs" />
      <Compile Include="Assets\MortarAI.cs" />
@@ -83,6 +90,8 @@
      <Compile Include="Assets\MusicScene.cs" />
      <Compile Include="Assets\MusicTitle.cs" />
      <Compile Include="Assets\MySingleton.cs" />
+     <Compile Include="Assets\NamePrint.cs" />
+     <Compile Include="Assets\OpeningCutsceneTimer.cs" />
      <Compile Include="Assets\PathThroughObjects.cs" />
      <Compile Include="Assets\PlaneRangeStore.cs" />
      <Compile Include="Assets\PlaySoundsAfterDestroy.cs" />
@@ -99,6 +108,7 @@
      <Compile Include="Assets\SharkRotate.cs" />
      <Compile Include="Assets\ShuttleScript.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\SkipCutscene.cs" />
      <Compile Include="Assets\SpacemanRotate.cs" />
      <Compile Include="Assets\SpacemanRotate2.cs" />
      <Compile Include="Assets\SpawnChest.cs" />
@@ -111,6 +121,7 @@
      <Compile Include="Assets\TextFixRotation.cs" />
      <Compile Include="Assets\Texture.cs" />
      <Compile Include="Assets\TieFighter.cs" />
+     <Compile Include="Assets\Timer1.cs" />
      <Compile Include="Assets\TowerRotate.cs" />
      <Compile Include="Assets\TowerSelector.cs" />
      <Compile Include="Assets\UFO.cs" />

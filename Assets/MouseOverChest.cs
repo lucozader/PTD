@@ -25,6 +25,7 @@ public class MouseOverChest : MonoBehaviour {
 			//move treasure chest to money and increase money by 100
 			if(once == false){
 			EnergyManager.energy += 100;
+			GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF+1000;
 			Debug.Log("MOUSE ENTERED");
 
 			PlaySoundsAfterDestroy.MoneySoundOnce = true;

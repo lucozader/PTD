@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour {
 		//public AudioClip saturnSound;
 		public AudioClip upgradeSound;
 		//	public AudioClip sirenSound;
+	public static int waveActivate;//this controls what wave is active//check guicontroller
 
 
 	public bool once = false;
@@ -26,6 +27,7 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		waveActivate=1;
 	
 	}
 	
@@ -33,7 +35,7 @@ public class EnemyController : MonoBehaviour {
 	void Update () {
 		timer = timer+1*Time.deltaTime;
 		//Debug.Log(timer);
-		if(once == false && timer >10){
+		if(once == false && timer >5){
 			Debug.Log("now");
 	transform.position = new Vector3(-440, 50, 1483);
 	GameObject pro1  = Instantiate (spawn1,transform.position,Quaternion.identity) as GameObject;///specific one
@@ -41,33 +43,31 @@ public class EnemyController : MonoBehaviour {
 	//GameObject pro2  = Instantiate (spawn2,transform.position,Quaternion.identity) as GameObject;///specific one
 			once = true;
 	}
-		/**	if(once2 == false && timer > 2800){
+			if(once2 == false && DeadCount.numberDead==2){
 					
 	
-	transform.position = new Vector3(-6, 8, 20);
-	GameObject pro4  = Instantiate (spawn3,transform.position,Quaternion.identity) as GameObject;///specific one
-	transform.position = new Vector3(-25, 8, 0);
-	GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
-			once2 = true;
-	transform.position = new Vector3(-6, 8, -20);
-	GameObject pro6  = Instantiate (spawn5,transform.position,Quaternion.identity) as GameObject;///specific one
-			once2 = true;
+	//transform.position = new Vector3(-6, 8, 20);
+	//GameObject pro4  = Instantiate (spawn3,transform.position,Quaternion.identity) as GameObject;///specific one
+	////transform.position = new Vector3(-25, 8, 0);
+	//GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
+			//once2 = true;
+
 	}
-	**/
+	
 		
-					/**if(once3 == false && timer > 5600){
+					if(once3 == false && DeadCount.numberDead ==4){
 					
 	
-	transform.position = new Vector3(-6, 8, 20);
-	GameObject pro4  = Instantiate (spawn3,transform.position,Quaternion.identity) as GameObject;///specific one
-	transform.position = new Vector3(-25, 8, 0);
-	GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
-			once2 = true;
-	transform.position = new Vector3(-6, 8, -20);
-	GameObject pro6  = Instantiate (spawn5,transform.position,Quaternion.identity) as GameObject;///specific one
-			once3 = true;
+	//transform.position = new Vector3(-6, 8, 20);
+	//GameObject pro4  = Instantiate (spawn3,transform.position,Quaternion.identity) as GameObject;///specific one
+	//transform.position = new Vector3(-25, 8, 0);
+	///GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
+		//	once2 = true;
+	//transform.position = new Vector3(-6, 8, -20);
+	//GameObject pro6  = Instantiate (spawn5,transform.position,Quaternion.identity) as GameObject;///specific one
+			//once3 = true;
 	}
-**/
+
 		
 		
 		if( timer == 900)

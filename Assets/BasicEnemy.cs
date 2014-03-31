@@ -54,7 +54,8 @@ public class BasicEnemy : MonoBehaviour {
 		}
 	
 		if(health <= 0&& once == false)
-		{DeadCount.numberDead+= 1;
+		{	GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF + 1000;// add 1000 to high score
+			DeadCount.numberDead+= 1;
 			Destroy(collision.collider.gameObject);
 			once = true;
 		
@@ -62,8 +63,7 @@ public class BasicEnemy : MonoBehaviour {
 				//EnergyManager.energy += energyBonus;
 				//	Quaternion pathObjectOrientation = Quaternion.LookRotation(pathPoints[0].transform.position - transform.position);
 			Vector3 chestPosition  = new Vector3(transform.position.x,transform.position.y+30,transform.position.z);
-				GameObject test = Instantiate(chest, chestPosition, Quaternion.identity) as GameObject;
-
+			GameObject test = Instantiate(chest, chestPosition, Quaternion.identity) as GameObject;
 			Destroy(gameObject);
 		}
 	}
