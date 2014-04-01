@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EnemySpawner.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUIControllerFireEmblem.cs">
     <Files>
-      <File FileName="Assets\EnemySpawner.cs" Line="112" Column="17" />
+      <File FileName="Assets\DetectClicksAndTouches.cs" Line="1" Column="1" />
+      <File FileName="Assets\DetectClicksAndTouches.cs" Line="1" Column="1" />
+      <File FileName="Assets\EnemySpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\EnemyController.cs" Line="45" Column="21" />
+      <File FileName="Assets\GUIControllerFireEmblem.cs" Line="128" Column="79" />
+      <File FileName="Assets\Starter.cs" Line="13" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

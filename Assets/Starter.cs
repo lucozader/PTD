@@ -10,6 +10,7 @@ public class Starter : MonoBehaviour {
 			timer = timer+1*Time.deltaTime;}
 
 		if(timer>0.8f){
+			GUIControllerFireEmblem.planetHealthLeft = 100;//reset vilage health here so doesn't effect high score
 			Application.LoadLevel("OpeningCutscene");}
 		
 		

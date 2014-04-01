@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Animation.js" />
      <Compile Include="Assets\Planet001\rotate.js" />
-     <Compile Include="Assets\fantasySpider\FS_rotateThis.js" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Specular.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Cut Out Opaque Bump.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Transparent.shader" />

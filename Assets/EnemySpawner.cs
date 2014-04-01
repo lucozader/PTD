@@ -24,23 +24,9 @@ public class EnemySpawner : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update (){
-
-		for(int i = 1; i < pathPoints.Length; i++)
-	{
-		//Gizmos.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
-		//Debug.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
-		for(float j = 0; j < 1; j= j + 0.3f){
-			Vector3  test = new Vector3();
-			test = Vector3.Lerp(pathPoints[i-1].transform.position, pathPoints[i].transform.position,j);
-			GameObject pathitem1 = Instantiate(pathitem, test, Quaternion.identity) as GameObject;
-			
-		}
-		
-		
-		
 	}
 
-	}
+
 	
 	void Spawn()
 	{
@@ -95,8 +81,8 @@ public class EnemySpawner : MonoBehaviour
 		//Debug.DrawLine(transform.position, pathPoints[0].transform.position);
 		if(once == false){
 
-		for(int i = 1; i < pathPoints.Length; i++)
-		{
+		for(int i = 1; i < pathPoints.Length; i++){
+/**{
 			//Gizmos.DrawLine(pathPoints[i-1].transform.position, pathPoints[i].transform.position);
 			Vector3  test = new Vector3();
 
@@ -110,7 +96,8 @@ public class EnemySpawner : MonoBehaviour
 				GameObject pathitem1 = Instantiate(pathitem, test, Quaternion.identity) as GameObject;
 				}
 				once = true;
-			}
+			} **/
+
 			//for(float j = 0; j < 1; j= j + 0.2f){
 			//	test = Vector3.Lerp(transform.position, pathPoints[0].transform.position,j);
 			//	GameObject pathitem1 = Instantiate(pathitem, test, Quaternion.identity) as GameObject;
@@ -121,4 +108,5 @@ public class EnemySpawner : MonoBehaviour
 
 		}
 	}
+}
 }

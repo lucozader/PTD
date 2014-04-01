@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour {
 	public GameObject spawn1;///template		
-	//public GameObject spawn2;///template	
+	public GameObject spawn2;///template	
 	//	public GameObject spawn3;///template	
 	//	public GameObject spawn4;///template	
 	//	public GameObject spawn5;///template	
@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		waveActivate=1;
+		waveActivate=0;
 	
 	}
 	
@@ -37,20 +37,21 @@ public class EnemyController : MonoBehaviour {
 		//Debug.Log(timer);
 		if(once == false && timer >5){
 			Debug.Log("now");
-	transform.position = new Vector3(-440, 50, 1483);
+	transform.position = new Vector3(-1200, 50, 1200);
 	GameObject pro1  = Instantiate (spawn1,transform.position,Quaternion.identity) as GameObject;///specific one
 	//transform.position = new Vector3(-24, 8, -8);
 	//GameObject pro2  = Instantiate (spawn2,transform.position,Quaternion.identity) as GameObject;///specific one
 			once = true;
+			waveActivate = 1;
 	}
 			if(once2 == false && DeadCount.numberDead==2){
 					
-	
-	//transform.position = new Vector3(-6, 8, 20);
-	//GameObject pro4  = Instantiate (spawn3,transform.position,Quaternion.identity) as GameObject;///specific one
+			transform.position = new Vector3(-1200, 50, 1200);
+			GameObject pro1  = Instantiate (spawn2,transform.position,Quaternion.identity) as GameObject;///specific one
 	////transform.position = new Vector3(-25, 8, 0);
 	//GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
-			//once2 = true;
+			once2 = true;
+			waveActivate = 2;
 
 	}
 	

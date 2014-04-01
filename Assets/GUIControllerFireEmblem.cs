@@ -49,9 +49,10 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 			Application.LoadLevel("endscene");//maby add death later on
 		}
 
-		if(DeadCount.numberDead == 12 && EnemyController.waveActivate == 10 )
+	//	if(DeadCount.numberDead == 4 && EnemyController.waveActivate == 10 )
+			if(DeadCount.numberDead == 4)
+
 		{	GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF+(planetHealthLeft*1000)/10;
-			planetHealthLeft = 100;
 			funds = 1000;
 			DeadCount.numberDead=0;
 			EnemyController.timer = 0;
@@ -66,8 +67,8 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 		
 	//	GUI.Box(new Rect(x+440,y,500,40), textbox);
 		
-		GUI.Box(new Rect(x,Screen.height - 40,w,h), "Return To Menu");
-		if(GUI.Button(new Rect(x+10,Screen.height -20,80,20),"Exit"))
+		GUI.Box(new Rect(x,y,w,h), "Return To Menu");
+		if(GUI.Button(new Rect(x+10,y+20,80,h-20),"Exit"))
 		{
 			start = false;
 			textbox = "Bye, Thanks for playing!";
@@ -123,6 +124,8 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 		GUI.Box(new Rect(300,y,w,h), "Score");
 		GUI.Box(new Rect(300,y+20,w,h-20), highScorePDF.ToString());//display high score in game
 			
+		GUI.Box(new Rect(Screen.width-150,y,w,h), "Attack Wave");
+		GUI.Box(new Rect(Screen.width-150,y+20,w,h-20), EnemyController.waveActivate.ToString());
 		
 		
 
