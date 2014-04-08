@@ -39,7 +39,7 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	
 	
 	void Update(){
-		Debug.Log(highScorePDF);
+		//Debug.Log(highScorePDF);
 		
 		if(planetHealthLeft <= 0)
 		{	planetHealthLeft = 100;

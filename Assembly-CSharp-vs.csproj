@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AddNumberToWaypoint.cs" />
      <Compile Include="Assets\AnimateDragon.cs" />
      <Compile Include="Assets\AsteroidTitle.cs" />
      <Compile Include="Assets\Backspace.cs" />
@@ -106,6 +107,7 @@
      <Compile Include="Assets\ScrollTexture.cs" />
      <Compile Include="Assets\SelectTowerOnClicked.cs" />
      <Compile Include="Assets\SharkRotate.cs" />
+     <Compile Include="Assets\ShipSmoothMove.cs" />
      <Compile Include="Assets\ShuttleScript.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <Compile Include="Assets\SkipCutscene.cs" />
@@ -118,6 +120,7 @@
      <Compile Include="Assets\StraightenDragon.cs" />
      <Compile Include="Assets\StraightenShip.cs" />
      <Compile Include="Assets\Test.cs" />
+     <Compile Include="Assets\Text.cs" />
      <Compile Include="Assets\TextFixRotation.cs" />
      <Compile Include="Assets\Texture.cs" />
      <Compile Include="Assets\TieFighter.cs" />
@@ -145,7 +148,6 @@
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Opaque Bump.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Opaque.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Cut Out Diffuse.shader" />
-     <None Include="Assets\ClassicSpace\Classic Space Skybox Readme.txt" />
      <None Include="Assets\Mesh\Shader\Diff_Spec_Gloss.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Cut Out Opaque Diffuse.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Opaque Bump.shader" />
